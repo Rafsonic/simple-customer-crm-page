@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/theme.scss";
+@import "styles/tailwind.scss";
+@import url("https://cdn.jsdelivr.net/npm/flat-icons@1.0.0/creative.css");
+@import url("https://cdn.jsdelivr.net/npm/flat-icons@1.0.0/interface.css");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import "assets/icons/flaticon/flaticons.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+.separator {
+  @apply border-b border-gray-700 border-solid;
+}
