@@ -3,6 +3,7 @@ import {QuickActions} from './shared/quick-actions.class';
 import {SvgIcons} from '../../../assets/svg-icons.enum';
 import {MatDialog} from '@angular/material/dialog';
 import {CreateTransactionComponent} from '../../create-transaction/create-transaction.component';
+import {ChangeStatusComponent} from '../../change-status/change-status.component';
 
 @Component({
   selector: 'app-quick-actions',
@@ -22,19 +23,23 @@ export class QuickActionsComponent implements OnInit {
   }
 
 
-
   clickQuickAction(action: QuickActions): void {
     switch (action.key) {
       case 'edit-customer':
         this.quickActionEvent.emit(action);
         break;
       case 'change-status':
+        this._openStatusDialog();
         break;
       case 'Deposit':
       case 'Withdrawal':
         this._openDialog(action);
         break;
     }
+  }
+
+  private _openStatusDialog() {
+    this.dialog.open(ChangeStatusComponent);
   }
 
   private _openDialog(action: QuickActions) {

@@ -10,11 +10,14 @@
                          (quickActionEvent)="quickActionClicked($event)"
                          [customer]="customer">
       </app-customer-form>
-
     </div>
+
     <div class="col-span-1">
       <app-quick-actions (quickActionEvent)="quickActionClicked($event)"></app-quick-actions>
+      <app-customer-activities [activities]="customer.activities"></app-customer-activities>
+      <app-customer-notes [notes]="customer.notes"></app-customer-notes>
     </div>
+
   </div>
 </div>
 

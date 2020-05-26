@@ -17,6 +17,7 @@ export class CustomerComponent extends BaseComponent implements OnInit {
   constructor(private customerService: CustomerService) {
     super();
     this._getCustomer();
+    this._subscribeToEventChanges();
   }
 
   ngOnInit(): void {
@@ -27,12 +28,6 @@ export class CustomerComponent extends BaseComponent implements OnInit {
       case 'edit-customer':
         this.isEditMode = !this.isEditMode;
         break;
-      case 'change-status':
-        break;
-      case 'deposit':
-        break;
-      case 'withrawal':
-        break;
     }
   }
 
@@ -41,6 +36,17 @@ export class CustomerComponent extends BaseComponent implements OnInit {
       .getCustomer()
       .subscribe(customer => {
         this.customer = customer;
+      });
+  }
+
+  private _subscribeToEventChanges() {
+    this.subscription = this.customerService
+      .loadCustomer()
+      .subscribe(customer => {
+        if (customer) {
+          console.log(customer);
+          this.customer = customer;
+        }
       });
   }
 

@@ -27,6 +27,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CreateTransactionComponent} from './create-transaction/create-transaction.component';
 import { CustomerActivitiesComponent } from './customer/customer-activities/customer-activities.component';
+import { CustomerNotesComponent } from './customer/customer-notes/customer-notes.component';
+import { NotSetPipe } from './core/custom-pipes/not-set.pipe';
+import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
+import { ChangeStatusComponent } from './change-status/change-status.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { CustomerActivitiesComponent } from './customer/customer-activities/cust
     ButtonSpinnerDirective,
     CreateTransactionComponent,
     CustomerActivitiesComponent,
+    CustomerNotesComponent,
+    NotSetPipe,
+    ChangeStatusComponent,
   ],
   entryComponents: [
     CreateTransactionComponent
@@ -63,7 +70,9 @@ import { CustomerActivitiesComponent } from './customer/customer-activities/cust
     MatIconModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule
   ],
   exports: [
     ButtonSpinnerDirective

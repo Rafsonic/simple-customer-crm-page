@@ -122,15 +122,15 @@ export const CUSTOMER: Customer = new Customer({
   activities: [
     {
       datetime: new Date('2020-05-12 09:59:21'),
-      activityTest: 'Account approved by officer \'Jennie\''
+      activityText: 'Account approved by officer \'Jennie\''
     },
     {
       datetime: new Date('2020-05-22 11:26:40'),
-      activityTest: 'Deposit declined by system'
+      activityText: 'Deposit declined by system'
     },
     {
       datetime: new Date('2020-05-23 20:15:57'),
-      activityTest: 'Withdrawal cancelled by user'
+      activityText: 'Withdrawal cancelled by user'
     }
   ]
 });
