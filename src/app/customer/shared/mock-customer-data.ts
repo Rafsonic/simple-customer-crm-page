@@ -42,6 +42,7 @@ export const CUSTOMER: Customer = new Customer({
   ],
   payments: [
     {
+      position: 1,
       pid: 1425552,
       gateway: 'paysafe',
       type: PaymentType.DEPOSIT,
@@ -50,6 +51,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-21 14:54:32')
     },
     {
+      position: 2,
       pid: 1425564,
       gateway: 'paypal',
       type: PaymentType.DEPOSIT,
@@ -58,6 +60,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-21 14:58:32')
     },
     {
+      position: 3,
       pid: 1425565,
       gateway: 'paypal',
       type: PaymentType.WITHDRAWAL,
@@ -66,6 +69,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-22 11:24:37')
     },
     {
+      position: 4,
       pid: 1425577,
       gateway: 'skrill',
       type: PaymentType.DEPOSIT,
@@ -74,6 +78,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-22 11:26:39')
     },
     {
+      position: 5,
       pid: 1425579,
       gateway: 'paysafe',
       type: PaymentType.WITHDRAWAL,
@@ -82,6 +87,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-23 12:04:01')
     },
     {
+      position: 6,
       pid: 1425581,
       gateway: 'paypal',
       type: PaymentType.DEPOSIT,
@@ -90,6 +96,7 @@ export const CUSTOMER: Customer = new Customer({
       datetime: new Date('2020-05-23 19:31:12')
     },
     {
+      position: 7,
       pid: 1425589,
       gateway: 'skrill',
       type: PaymentType.WITHDRAWAL,

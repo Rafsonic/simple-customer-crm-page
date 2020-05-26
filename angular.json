@@ -34,7 +34,8 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/assets/icons/flaticon/flaticons.scss",
-              "src/assets/icons/flaticon2/flaticon.css"
+              "src/assets/icons/flaticon2/flaticon.css",
+              "src/assets/icons/line-awesome/css/line-awesome.css"
             ],
             "scripts": []
           },
@@ -103,7 +104,9 @@
             "styles": [
               "src/assets/icons/flaticon/flaticons.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/icons/flaticon2/flaticon.css",
+              "src/assets/icons/line-awesome/css/line-awesome.css"
             ],
             "scripts": []
           }

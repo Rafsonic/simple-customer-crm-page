@@ -8,10 +8,11 @@
   </div>
   <div class="portlet__body">
     <div class="grid grid-cols-2">
-      <div *ngFor="let action of quickActions" class="h-20 flex items-center content-center justify-center">
+      <div *ngFor="let action of quickActions"
+           class="h-24 flex border-r border-b border-solid border-gray-500 items-center content-center justify-center cursor-pointer hover:bg-gray-200">
         <div class="text-xs">
           <i [innerHTML]="action.icon | safeHtml"></i>
-          {{action.name}}
+          <span class="mt-2">{{action.name}}</span>
         </div>
       </div>
     </div>

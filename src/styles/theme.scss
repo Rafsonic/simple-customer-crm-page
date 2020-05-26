@@ -3,10 +3,10 @@
 
 @include mat-core();
 
-$primary:mat-palette($primary-color, 500);
+$primary:mat-palette($primary-color);
 $accent:mat-palette($secondary-color,500, A100, A400);
-$warn:mat-palette($grey);
+$gray:mat-palette($grey);
 
-$theme:mat-light-theme($primary-color, $accent);
+$theme:mat-light-theme($primary, $accent, $gray);
 
 @include angular-material-theme($theme);

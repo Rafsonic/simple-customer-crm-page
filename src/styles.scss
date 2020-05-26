@@ -33,3 +33,12 @@ body {
     @apply text-indigo-500 opacity-100;
   }
 }
+
+//Meterial Chips
+.mat-chip.mat-standard-chip.mat-chip-selected {
+  @apply text-xs;
+
+  &.secondary {;
+    @apply text-white bg-green-500;
+  }
+}
