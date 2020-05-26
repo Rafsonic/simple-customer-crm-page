@@ -1,13 +1,12 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {CustomerComponent} from './customer/customer.component';
 import {QuickActionsComponent} from './customer/quick-actions/quick-actions.component';
-import {SafeHtmlPipe} from './custom-pipes/safe-html.pipe';
+import {SafeHtmlPipe} from './core/custom-pipes/safe-html.pipe';
 import {CustomerHeaderComponent} from './customer/customer-header/customer-header.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {CustomerProfileComponent} from './customer/customer-profile/customer-profile.component';
@@ -18,6 +17,16 @@ import {CustomerTransactionsComponent} from './customer/customer-transactions/cu
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
+import {CustomerFormComponent} from './customer/customer-form/customer-form.component';
+import {FormlyModule} from '@ngx-formly/core';
+import {FormlyMaterialModule} from '@ngx-formly/material';
+import {ButtonSpinnerDirective} from './core/custom-directives/button-spinner.directive';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {CreateTransactionComponent} from './create-transaction/create-transaction.component';
+import { CustomerActivitiesComponent } from './customer/customer-activities/customer-activities.component';
 
 @NgModule({
   declarations: [
@@ -29,21 +38,39 @@ import {MatChipsModule} from '@angular/material/chips';
     CustomerProfileComponent,
     CustomerAccountsComponent,
     NavigationComponent,
-    CustomerTransactionsComponent
+    CustomerTransactionsComponent,
+    CustomerFormComponent,
+    ButtonSpinnerDirective,
+    CreateTransactionComponent,
+    CustomerActivitiesComponent,
+  ],
+  entryComponents: [
+    CreateTransactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatSliderModule,
     MatTabsModule,
     MatCheckboxModule,
     MatTableModule,
-    MatChipsModule
+    MatChipsModule,
+    FormlyModule.forRoot(),
+    FormlyMaterialModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatDialogModule
+  ],
+  exports: [
+    ButtonSpinnerDirective
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+

@@ -9,6 +9,7 @@
   <div class="portlet__body">
     <div class="grid grid-cols-2">
       <div *ngFor="let action of quickActions"
+           (click)="clickQuickAction(action)"
            class="h-24 flex border-r border-b border-solid border-gray-500 items-center content-center justify-center cursor-pointer hover:bg-gray-200">
         <div class="text-xs">
           <i [innerHTML]="action.icon | safeHtml"></i>

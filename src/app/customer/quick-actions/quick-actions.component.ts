@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {QuickActions} from './shared/quick-actions.class';
 import {SvgIcons} from '../../../assets/svg-icons.enum';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateTransactionComponent} from '../../create-transaction/create-transaction.component';
 
 @Component({
   selector: 'app-quick-actions',
@@ -9,16 +11,41 @@ import {SvgIcons} from '../../../assets/svg-icons.enum';
 })
 export class QuickActionsComponent implements OnInit {
 
+  @Output() quickActionEvent = new EventEmitter<QuickActions>();
   quickActions: QuickActions[] = [];
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this._setQuickActions();
   }
 
-  private _setQuickActions() {
+
+
+  clickQuickAction(action: QuickActions): void {
+    switch (action.key) {
+      case 'edit-customer':
+        this.quickActionEvent.emit(action);
+        break;
+      case 'change-status':
+        break;
+      case 'Deposit':
+      case 'Withdrawal':
+        this._openDialog(action);
+        break;
+    }
+  }
+
+  private _openDialog(action: QuickActions) {
+    this.dialog.open(CreateTransactionComponent, {
+      data: {
+        type: action.key
+      }
+    });
+  }
+
+  private _setQuickActions(): void {
     this.quickActions = [
       new QuickActions({
         key: 'edit-customer',
@@ -31,12 +58,12 @@ export class QuickActionsComponent implements OnInit {
         icon: SvgIcons.status
       }),
       new QuickActions({
-        key: 'deposit',
+        key: 'Deposit',
         name: 'Deposit',
         icon: SvgIcons.deposit
       }),
       new QuickActions({
-        key: 'withdrawal',
+        key: 'Withdrawal',
         name: 'Withdrawal',
         icon: SvgIcons.outgoing
       })

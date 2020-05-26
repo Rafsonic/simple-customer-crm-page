@@ -2,12 +2,20 @@
   <div class="grid grid-cols-3 gap-4">
     <div class="col-span-2">
       <app-customer-header [customer]="customer"></app-customer-header>
-      <app-navigation></app-navigation>
-      <router-outlet></router-outlet>
+      <ng-container *ngIf="!isEditMode">
+        <app-navigation></app-navigation>
+        <router-outlet></router-outlet>
+      </ng-container>
+      <app-customer-form *ngIf="isEditMode"
+                         (quickActionEvent)="quickActionClicked($event)"
+                         [customer]="customer">
+      </app-customer-form>
+
     </div>
     <div class="col-span-1">
-      <app-quick-actions></app-quick-actions>
+      <app-quick-actions (quickActionEvent)="quickActionClicked($event)"></app-quick-actions>
     </div>
   </div>
 </div>
+
 

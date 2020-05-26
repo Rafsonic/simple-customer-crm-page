@@ -5,7 +5,7 @@
 
 $primary:mat-palette($primary-color);
 $accent:mat-palette($secondary-color,500, A100, A400);
-$gray:mat-palette($grey);
+$gray:mat-palette($mat-red);
 
 $theme:mat-light-theme($primary, $accent, $gray);
 

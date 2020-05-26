@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: CustomerProfileComponent
+    component: CustomerProfileComponent,
   },
   {
     path: 'trading-accounts',

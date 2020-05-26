@@ -41,4 +41,8 @@ body {
   &.secondary {;
     @apply text-white bg-green-500;
   }
+
+  &.gray {
+    @apply bg-gray-700 text-white;
+  }
 }
