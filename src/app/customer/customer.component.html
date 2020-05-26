@@ -1,48 +1,9 @@
 <div class="container-fluid mx-auto">
   <div class="grid grid-cols-3 gap-4">
     <div class="col-span-2">
-      <div class="container mx-auto">
-        <div class="card flex flex-col bg-white">
-          <div class="card-body px-8 py-10">
-            <div class="flex mb-8">
-              <div class="flex-grow min-w-full">
-                <div class="flex justify-between flex-wrap mt-1">
-                  <div class="flex mr-3">
-                    <div class=""> Jason Muller </div>
-                    <div class="">  jason@siastudio.com </div>
-                    <div class=""> Limassol, Cyprus </div>
-                  </div>
-                  <div class="">
-                    <label class="btn px-3 py-2 bg-green-100 text-green-500 font-medium text-sm rounded-md">Approved</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="separator"></div>
-            <div class="flex mt-4">
-              <div class="w-full grid grid-cols-5 gap-4">
-                <div class="col-span-1">
-                  11
-                </div>
-                <div class="col-span-1">
-                  22
-                </div>
-                <div class="col-span-1">
-                  33
-                </div>
-                <div class="col-span-1">
-                  44
-                </div>
-                <div class="col-span-1">
-                  55
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-customer-header [customer]="customer"></app-customer-header>
+      <app-navigation></app-navigation>
     </div>
-
     <div class="col-span-1">
       <app-quick-actions></app-quick-actions>
     </div>

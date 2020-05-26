@@ -5,13 +5,31 @@
 @import url("https://cdn.jsdelivr.net/npm/flat-icons@1.0.0/interface.css");
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@import "assets/icons/flaticon/flaticons.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+}
 
 .separator {
-  @apply border-b border-gray-700 border-solid;
+  @apply border-b border-gray-400 border-solid;
+}
+
+// Material Tabs Border
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  @apply bg-indigo-500;
+}
+
+// Material Tabs
+.mat-tab-link {
+  &.mat-tab-label-active {
+    @apply text-indigo-500 opacity-100;
+  }
 }

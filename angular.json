@@ -32,7 +32,9 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/icons/flaticon/flaticons.scss",
+              "src/assets/icons/flaticon2/flaticon.css"
             ],
             "scripts": []
           },
@@ -99,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/icons/flaticon/flaticons.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
