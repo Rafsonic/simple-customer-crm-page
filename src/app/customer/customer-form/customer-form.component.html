@@ -1,0 +1,18 @@
+<form class="mt-4" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container mx-auto mt-8 px-8 py-5 bg-white">
+    <div class="flex justify-between items-center">
+      <div class="font-medium">Edit customer</div>
+      <div>
+        <button mat-raised-button (click)="goBack()">Cancel</button>
+        <button type="submit" mat-raised-button color="primary">Save changes</button>
+      </div>
+    </div>
+    <div class="separator mt-4 mb-5"></div>
+    <formly-form
+      [model]="customer"
+      [form]="form"
+      [fields]="formFields"
+      [options]="options">
+    </formly-form>
+  </div>
+</form>

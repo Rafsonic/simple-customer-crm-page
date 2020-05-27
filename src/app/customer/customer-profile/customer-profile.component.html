@@ -1,0 +1,94 @@
+<div class="container mx-auto">
+  <div class="grid grid-cols-2">
+    <div class="col-span-2 bg-gray-100 px-6 py-4 p text-base font-medium">
+      <h4>Personal Information</h4>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon fa fa-user mr-2"></i>
+        First Name
+      </small>
+      <a>{{customer.firstName}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon fa fa-user mr-2"></i>
+        Last Name
+      </small>
+      <a>{{customer.lastName}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center">
+      <small>
+        <i class="icon fa fa-envelope mr-2"></i>
+        Email
+      </small>
+      <a>{{customer.email}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center">
+      <small>
+        <i class="icon fa fa-bullhorn mr-2"></i>
+        Invited by
+      </small>
+      <a>{{customer?.invited_by_affiliate | notSet}}</a>
+    </div>
+
+
+    <div class="col-span-2 bg-gray-100 px-6 py-4 text-base font-medium">
+      <h4>Residential Address</h4>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon la la la-map-signs  mr-2"></i>
+        Address 1
+      </small>
+      <a>{{customer.address1}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon la la la-map-signs  mr-2"></i>
+        Address 2
+      </small>
+      <a>{{customer?.address2 | notSet}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon fa fa-building-o mr-2"></i>
+        City
+      </small>
+      <a>{{customer.city}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center bottom">
+      <small>
+        <i class="icon fa fa-building-o mr-2"></i>
+        Postcode
+      </small>
+      <a>{{customer.postcode}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center ">
+      <small>
+        <i class="icon flaticon-map-location  mr-2"></i>
+        State
+      </small>
+      <a>{{customer?.state | notSet}}</a>
+    </div>
+    <div class="col-span-1 bg-white flex px-6 py-4 justify-between items-center ">
+      <small>
+        <i class="icon fa fa-flag mr-2"></i>
+        Country
+      </small>
+      <a>{{customer.country | notSet}}</a>
+    </div>
+
+
+    <div class="col-span-2 bg-gray-100 px-6 py-4 text-base font-medium">
+      <h4>Contact Details</h4>
+    </div>
+    <div class="col-span-2 bg-white flex px-6 py-4 justify-between items-center ">
+      <small>
+        <i class="icon fa fa-phone mr-2"></i>
+        Phone Number
+      </small>
+      <a>{{customer.phone | notSet}}</a>
+    </div>
+  </div>
+</div>

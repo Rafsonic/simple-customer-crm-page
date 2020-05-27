@@ -1,0 +1,111 @@
+<div class="container mx-auto " *ngIf="customer">
+  <div class="card flex flex-col bg-white rounded">
+    <div class="px-8 py-8">
+      <div class="flex mb-5">
+        <div class="flex-grow min-w-full">
+          <div class="flex justify-between flex-wrap mt-1">
+            <div class="flex mr-3">
+              <div class="mr-2 font-medium">{{customer.fullName}}</div>
+              <i class="flaticon2-correct text-green-600" *ngIf="customer.status === status.APPROVED"></i>
+            </div>
+            <div class="flex">
+              <label class="btn px-3 py-2  font-medium text-sm rounded-md"
+                     [ngClass]="{
+                     'bg-green-100  text-green-500': customer.status === status.APPROVED,
+                     'bg-red-100  text-red-500': customer.status === status.ARCHIVED,
+                     'bg-pink-100 text-pink-500': customer.status === status.REJECTED,
+                     'bg-gray-200 text-grey-500': customer.status === status.PENDING}">{{customer.status}}</label>
+              <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="_openDialog('Deposit')">
+                    <span>Deposit</span>
+                  </button>
+                  <button mat-menu-item (click)="_openDialog('Withdrawal')">
+                    <span>Withdrawal</span>
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+          <div class="flex mt-2">
+            <div class="mr-8 text-sm font-medium text-gray-600">
+              <i class="flaticon2-user s-13px mr-1"></i>
+              {{customer.clientId}}
+            </div>
+            <div class="mr-8 text-sm font-medium text-gray-600">
+              <i class="flaticon2-new-email s-13px mr-1"></i>
+              {{customer.email}}
+            </div>
+            <div class="text-sm font-medium text-gray-600">
+              <i class="flaticon2-placeholder s-13px mr-1"></i>
+              {{customer.city}}, {{customer.country}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="flex mt-4">
+        <div class="w-full grid grid-cols-5 gap-4">
+          <div class="col-span-1">
+           <div class="flex items-center leading-tight">
+             <div class="icon">
+               <i class="flaticon-piggy-bank text-4xl mr-4 text-gray-600 hidden xl:block"></i>
+             </div>
+             <div class="content">
+               <small class="text-sm font-medium text-gray-600">Wallet</small><br>
+               {{customer.wallet.balance | currency: customer.wallet.currency}}
+             </div>
+           </div>
+          </div>
+          <div class="col-span-1">
+            <div class="flex items-center leading-tight">
+              <div class="icon">
+                <i class="flaticon-analytics text-4xl mr-4 text-gray-600 hidden xl:block"></i>
+              </div>
+              <div class="content">
+                <small class="text-sm font-medium text-gray-600">Accounts</small><br>
+                {{customer.trading_accounts.length}}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1">
+            <div class="flex items-center leading-tight">
+              <div class="icon">
+                <i class="flaticon-notepad text-4xl mr-4 text-gray-600 hidden xl:block"></i>
+              </div>
+              <div class="content">
+                <small class="text-sm font-medium text-gray-600">Transactions</small><br>
+                {{customer.payments.length}}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1">
+            <div class="flex items-center leading-tight">
+              <div class="icon">
+                <i class="flaticon-file-2 text-4xl mr-4 text-gray-600 hidden xl:block"></i>
+              </div>
+              <div class="content">
+                <small class="text-sm font-medium text-gray-600">Notes</small><br>
+                {{customer.notes.length}}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1">
+            <div class="flex items-center leading-tight">
+              <div class="icon">
+                <i class="flaticon-calendar-1 text-4xl mr-4 text-gray-600 hidden xl:block"></i>
+              </div>
+              <div class="content">
+                <small class="text-sm font-medium text-gray-600">Activities</small><br>
+                {{customer.activities.length}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.grid {
+  div.col-span-1 {
+    @apply border border-solid border-gray-400;
+    &:nth-child(even) {
+      border-right: 0!important;
+    }
+    &.bottom{
+      border-bottom: 0!important;
+    }
+  }
+
+  small {
+    @apply font-medium text-gray-800 items-center flex;
+    i {
+      color: #999;
+      font-size: 15px;
+    }
+  }
+
+  a {
+    @apply text-xs text-gray-700;
+  }
+}

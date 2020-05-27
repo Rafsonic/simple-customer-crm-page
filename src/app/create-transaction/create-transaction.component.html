@@ -1,0 +1,12 @@
+<form class="mt-4 mx-auto text-center" [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form
+    [model]="transaction"
+    [form]="form"
+    [fields]="formFields"
+    [options]="options">
+  </formly-form>
+  <div class="my-5">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary">Submit</button>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+::ng-deep {
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+button {
+  @apply ml-3 !important;
+}
