@@ -6,7 +6,6 @@ import {Customer} from '../customer/shared/customer.class';
 import {CustomerService} from '../customer/shared/customer.service';
 import {PaymentStatus} from '../customer/shared/payment-status.enum';
 import {PaymentType} from '../customer/shared/payment-type.enum';
-import {FormlyFieldConfig} from '@ngx-formly/core';
 
 
 @Component({

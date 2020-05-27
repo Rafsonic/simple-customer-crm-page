@@ -11,12 +11,12 @@ import {QuickActions} from '../quick-actions/shared/quick-actions.class';
 })
 export class CustomerFormComponent extends BaseFormComponent implements OnInit {
 
-  @Input() customer: Customer;
   @Output() quickActionEvent = new EventEmitter<QuickActions>();
+  customer: Customer = new Customer();
 
   constructor(private customerService: CustomerService) {
     super();
-    this._setupForm();
+    this._getCustomer();
   }
 
   ngOnInit(): void {
@@ -181,5 +181,14 @@ export class CustomerFormComponent extends BaseFormComponent implements OnInit {
     ];
   }
 
+
+  private _getCustomer(): void {
+    this.subscription = this.customerService
+      .getCustomer()
+      .subscribe(data => {
+        this.customer = {...data} as Customer;
+        this._setupForm();
+      });
+  }
 
 }

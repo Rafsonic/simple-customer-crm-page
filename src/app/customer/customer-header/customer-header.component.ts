@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Customer} from '../shared/customer.class';
 import {MatDialog} from '@angular/material/dialog';
 import {CreateTransactionComponent} from '../../create-transaction/create-transaction.component';

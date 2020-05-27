@@ -44,7 +44,6 @@ export class CustomerComponent extends BaseComponent implements OnInit {
       .loadCustomer()
       .subscribe(customer => {
         if (customer) {
-          console.log(customer);
           this.customer = customer;
         }
       });

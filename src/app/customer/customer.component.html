@@ -7,8 +7,7 @@
         <router-outlet></router-outlet>
       </ng-container>
       <app-customer-form *ngIf="isEditMode"
-                         (quickActionEvent)="quickActionClicked($event)"
-                         [customer]="customer">
+                         (quickActionEvent)="quickActionClicked($event)">
       </app-customer-form>
     </div>
 

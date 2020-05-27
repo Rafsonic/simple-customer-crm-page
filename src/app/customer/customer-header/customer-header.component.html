@@ -5,7 +5,7 @@
         <div class="flex-grow min-w-full">
           <div class="flex justify-between flex-wrap mt-1">
             <div class="flex mr-3">
-              <div class="mr-2 font-medium">{{customer.fullName}}</div>
+              <div class="mr-2 font-medium">{{customer?.firstName}} {{customer?.lastName}}</div>
               <i class="flaticon2-correct text-green-600" *ngIf="customer.status === status.APPROVED"></i>
             </div>
             <div class="flex">
